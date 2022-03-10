@@ -62,3 +62,10 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+//connect to db
+mongoose.connect("mongodb://localhost/UserLogin", {
+  userNewUrlParser: true,
+  useUnifinedTopolgy: true
+}, (err) => console.log(err ? err : 'Connected to Database')
+);
